@@ -18,7 +18,6 @@ public:
         : id_(id), leftFork_(leftFork), rightFork_(rightFork), PhState_(PhilosopherState::Idle) {}
 
     void work();
-
     size_t getId() const;
     PhilosopherState getPhState() const;
 

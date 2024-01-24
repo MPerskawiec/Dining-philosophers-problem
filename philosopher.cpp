@@ -4,12 +4,9 @@ void Philosopher::work() {
     while (1) {
         PhState_ = PhilosopherState::WaitingForForks;
         {
-            std::cout << id_ << ": czekam za widelcem \n";
             std::scoped_lock lock{leftFork_, rightFork_};
-            std::cout << id_ << ": jem \n";
             eating();
         }
-        std::cout << id_ << ": odpoczywam \n";
         resting();
     }
 }
