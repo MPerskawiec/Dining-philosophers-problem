@@ -1,0 +1,1 @@
+The Dining Philosophers project is a multithreading simulation designed to showcase the ability to effectively manage programs that run concurrently. The main goal of this implementation is to emphasize the sharing of resources among N threads. 
