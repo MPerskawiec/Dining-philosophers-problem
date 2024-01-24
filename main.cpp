@@ -51,13 +51,13 @@ private:
     void resting() {
         PhState_ = PhilosopherState::Resting;
         auto time = randTime();
-        std::this_thread::sleep_for(std::chrono::seconds(2));
+        std::this_thread::sleep_for(std::chrono::seconds(time));
     }
 
     void eating() {
         PhState_ = PhilosopherState::Eating;
         auto time = randTime();
-        std::this_thread::sleep_for(std::chrono::seconds(10));
+        std::this_thread::sleep_for(std::chrono::seconds(time));
     }
 
     size_t randTime() {
@@ -79,7 +79,7 @@ int main() {
     Philosopher P1{1, mx1, mx2};
     Philosopher P2{2, mx1, mx2};
 
-
+.\
     std::thread t1{&Philosopher::work, &P1};
     std::thread t2{&Philosopher::work, &P2};
 
