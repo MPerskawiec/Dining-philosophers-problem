@@ -2,7 +2,7 @@
 #include "philosopher.h"
 
 int main() {
-    const int amount = 5;
+    const int amount = 5; // any number >=2
 
     std::vector<std::mutex> forkAvailable(amount);
     std::vector<Philosopher> philosophers;
@@ -33,11 +33,11 @@ int main() {
                 std::cout << i + 1 << ": Resting     ";
             } else if (st[i] == PhilosopherState::WaitingForForks) {
                 std::cout << i + 1 << ": Waiting     ";
-            }else if (st[i] == PhilosopherState::Eating) {
+            } else if (st[i] == PhilosopherState::Eating) {
                 std::cout << i + 1 << ": Eating     ";
             }
         }
-        std::cout <<"\n";
+        std::cout << "\n";
 
         std::this_thread::sleep_for(std::chrono::milliseconds(2000));
     }

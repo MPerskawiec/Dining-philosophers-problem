@@ -1,5 +1,8 @@
 #include "philosopher.h"
 
+Philosopher::Philosopher(size_t id, std::mutex& leftFork, std::mutex& rightFork)
+        : id_(id), leftFork_(leftFork), rightFork_(rightFork), PhState_(PhilosopherState::Idle) {}
+
 void Philosopher::work() {
     while (1) {
         PhState_ = PhilosopherState::WaitingForForks;
